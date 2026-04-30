@@ -33,8 +33,9 @@ app.use((req, res, next) => {
 app.use("/assets", express.static(path.join(__dirname, "public", "assets")));
 
 // connect database
-const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost:27017/PrimeCapital";
+const MONGO_URI = process.env.MONGO_URI;
+
+console.log("MONGO_URI:", process.env.MONGO_URI);
 
 mongoose
   .connect(MONGO_URI)
