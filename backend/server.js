@@ -16,7 +16,19 @@ const app = express();
 
 app.use(
   cors({
-    origin: true, // Vite frontend
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://primecapital-frontend.vercel.app",
+      ];
+
+      // allow requests with no origin (Postman etc.)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   }),
 );
