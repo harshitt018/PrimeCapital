@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://primecapital-backend.onrender.com/api",
   withCredentials: true,
 });
 
@@ -44,9 +44,12 @@ api.interceptors.response.use(
           return Promise.reject(error);
         }
 
-        const res = await axios.post("http://localhost:5000/api/auth/refresh", {
-          refreshToken,
-        });
+        const res = await axios.post(
+          "https://primecapital-backend.onrender.com/api/auth/refresh",
+          {
+            refreshToken,
+          },
+        );
 
         const newAccessToken = res.data.accessToken;
         localStorage.setItem("accessToken", newAccessToken);
