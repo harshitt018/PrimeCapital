@@ -1,0 +1,379 @@
+:root {
+  /* ── Backgrounds ── */
+  --bg-base: #f8fafc; /* page background */
+  --bg-subtle: #f1f5f9; /* slightly off */
+  --bg-card: #ffffff; /* cards, modals */
+  --bg-card-hover: #f8fafc; /* card hover */
+  --bg-input: #f8fafc; /* input fields */
+  --bg-nav: #f8fafc; /* sidebar */
+  --bg-topbar: rgba(255, 255, 255, 0.95); /* topbar */
+  --bg-badge: #eff6ff; /* badge/pill bg */
+
+  /* ── Text ── */
+  --text-primary: #0f172a; /* headings */
+  --text-secondary: #475569; /* body text */
+  --text-muted: #94a3b8; /* placeholder, hint */
+  --text-inverse: #ffffff; /* text on dark bg */
+
+  /* ── Brand / Primary ── */
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-hover: #1d4ed8;
+  --primary-ring: rgba(37, 99, 235, 0.2);
+  --primary-bg: #eff6ff;
+
+  /* ── Borders ── */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* ── Status colors ── */
+  --green: #22c55e;
+  --green-bg: #f0fdf4;
+  --green-text: #15803d;
+  --amber: #f59e0b;
+  --amber-bg: #fffbeb;
+  --amber-text: #92400e;
+  --red: #ef4444;
+  --red-bg: #fef2f2;
+  --red-text: #991b1b;
+  --violet: #8b5cf6;
+  --violet-bg: #f5f3ff;
+  --violet-text: #5b21b6;
+  --cyan: #06b6d4;
+  --cyan-bg: #ecfeff;
+  --cyan-text: #0e7490;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* ── Icon gradient vars ── */
+  --icon-blue-from: #2563eb;
+  --icon-blue-to: #3b82f6;
+  --icon-green-from: #16a34a;
+  --icon-green-to: #22c55e;
+  --icon-amber-from: #d97706;
+  --icon-amber-to: #f59e0b;
+  --icon-red-from: #dc2626;
+  --icon-red-to: #ef4444;
+  --icon-violet-from: #7c3aed;
+  --icon-violet-to: #8b5cf6;
+  --icon-cyan-from: #0891b2;
+  --icon-cyan-to: #06b6d4;
+
+  /* ── Scrollbar ── */
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+/* ═══════════════════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  /* ── Backgrounds ── */
+  --bg-base: #0f0f0f; /* YouTube jaisa — not pitch black */
+  --bg-subtle: #181818;
+  --bg-card: #212121; /* cards */
+  --bg-card-hover: #2d2d2d;
+  --bg-input: #121212;
+  --bg-nav: #0f0f0f; /* sidebar */
+  --bg-topbar: rgba(15, 15, 15, 0.97);
+  --bg-badge: #1a2744;
+
+  /* ── Text ── */
+  --text-primary: #f1f1f1; /* YouTube heading color */
+  --text-secondary: #aaaaaa; /* YouTube secondary text */
+  --text-muted: #717171;
+  --text-inverse: #0f0f0f;
+
+  /* ── Brand ── */
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-hover: #2563eb;
+  --primary-ring: rgba(59, 130, 246, 0.25);
+  --primary-bg: #1a2744;
+
+  /* ── Borders ── */
+  --border: #3f3f3f; /* YouTube border color */
+  --border-strong: #555555;
+  --border-focus: #3b82f6;
+
+  /* ── Status ── */
+  --green: #22c55e;
+  --green-bg: #0a2e1a;
+  --green-text: #4ade80;
+  --amber: #f59e0b;
+  --amber-bg: #2a1f00;
+  --amber-text: #fbbf24;
+  --red: #ef4444;
+  --red-bg: #2a0a0a;
+  --red-text: #f87171;
+  --violet: #8b5cf6;
+  --violet-bg: #1a0a3e;
+  --violet-text: #a78bfa;
+  --cyan: #06b6d4;
+  --cyan-bg: #021a22;
+  --cyan-text: #22d3ee;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.8);
+
+  /* ── Scrollbar ── */
+  --scrollbar-track: #181818;
+  --scrollbar-thumb: #3f3f3f;
+}
+
+/* ═══════════════════════════════════════════════════
+   BASE STYLES
+═══════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  transition: color-scheme 0.3s ease;
+  background-color: var(--bg-base);
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ═══════════════════════════════════════════════════
+   THEME UTILITY CLASSES
+   Use these in JSX instead of hardcoded Tailwind colors
+═══════════════════════════════════════════════════ */
+
+/* Backgrounds */
+.theme-bg {
+  background-color: var(--bg-base) !important;
+}
+.theme-bg-card {
+  background-color: var(--bg-card) !important;
+}
+.theme-bg-input {
+  background-color: var(--bg-input) !important;
+}
+.theme-bg-nav {
+  background-color: var(--bg-nav) !important;
+}
+
+/* Text */
+.theme-text {
+  color: var(--text-primary) !important;
+}
+.theme-text-muted {
+  color: var(--text-muted) !important;
+}
+.theme-text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* Borders */
+.theme-border {
+  border-color: var(--border) !important;
+}
+
+/* Cards */
+.theme-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-card:hover {
+  background-color: var(--bg-card-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Inputs */
+.theme-input {
+  background-color: var(--bg-input);
+  border: 2px solid var(--border);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.2s ease;
+}
+
+.theme-input:focus {
+  border-color: var(--border-focus);
+  background-color: var(--bg-card);
+  outline: none;
+  box-shadow: 0 0 0 4px var(--primary-ring);
+}
+
+.theme-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Topbar */
+.theme-topbar {
+  background-color: var(--bg-topbar);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Sidebar */
+.theme-sidebar {
+  background: var(--bg-nav);
+  border-right: 1px solid var(--border);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Nav item active */
+.theme-nav-active {
+  background: linear-gradient(
+    135deg,
+    var(--icon-blue-from),
+    var(--icon-blue-to)
+  );
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+/* Table */
+.theme-table-header {
+  background: linear-gradient(
+    90deg,
+    var(--bg-subtle),
+    var(--bg-card),
+    var(--bg-subtle)
+  );
+  border-bottom: 2px solid var(--border);
+}
+
+.theme-table-row {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease;
+}
+
+.theme-table-row:hover {
+  background-color: var(--primary-bg);
+}
+
+/* Badges */
+.theme-badge-green {
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+.theme-badge-amber {
+  background: var(--amber-bg);
+  color: var(--amber-text);
+}
+.theme-badge-red {
+  background: var(--red-bg);
+  color: var(--red-text);
+}
+.theme-badge-blue {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+.theme-badge-violet {
+  background: var(--violet-bg);
+  color: var(--violet-text);
+}
+.theme-badge-cyan {
+  background: var(--cyan-bg);
+  color: var(--cyan-text);
+}
+
+/* Dividers */
+.theme-divider {
+  border-color: var(--border);
+}
+
+/* ═══════════════════════════════════════════════════
+   SMOOTH TRANSITIONS ON THEME CHANGE
+   Add this to any element that switches theme
+═══════════════════════════════════════════════════ */
+.theme-transition {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+/* ── Icon rings — dark mode subtle ── */
+[data-theme="dark"] .ring-blue-100 {
+  --tw-ring-color: rgba(37, 99, 235, 0.15) !important;
+}
+[data-theme="dark"] .ring-green-100 {
+  --tw-ring-color: rgba(34, 197, 94, 0.15) !important;
+}
+[data-theme="dark"] .ring-amber-100 {
+  --tw-ring-color: rgba(245, 158, 11, 0.15) !important;
+}
+[data-theme="dark"] .ring-red-100 {
+  --tw-ring-color: rgba(239, 68, 68, 0.15) !important;
+}
+[data-theme="dark"] .ring-violet-100 {
+  --tw-ring-color: rgba(139, 92, 246, 0.15) !important;
+}
+[data-theme="dark"] .ring-cyan-100 {
+  --tw-ring-color: rgba(6, 182, 212, 0.15) !important;
+}
+[data-theme="dark"] .ring-emerald-100 {
+  --tw-ring-color: rgba(16, 185, 129, 0.15) !important;
+}
+[data-theme="dark"] .ring-indigo-100 {
+  --tw-ring-color: rgba(99, 102, 241, 0.15) !important;
+}
+[data-theme="dark"] .ring-slate-100 {
+  --tw-ring-color: rgba(148, 163, 184, 0.15) !important;
+}
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+[data-theme="dark"]
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
