@@ -34,7 +34,6 @@ app.use("/assets", express.static(path.join(__dirname, "public", "assets")));
 
 // connect database
 const MONGO_URI = process.env.MONGO_URI;
-console.log("MongoDB Connected");
 
 mongoose
   .connect(MONGO_URI)
